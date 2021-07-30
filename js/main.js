@@ -59,11 +59,8 @@ $(function() {
     function register($form) {
         $.ajax({
             type: $form.attr('method'),
-            url: "php/contact-me.php",
+            url: "php/notify.php",
             data: $form.serialize(),
-            cache: false,
-            dataType: 'json',
-            contentType: "application/json; charset=utf-8",
             error: function(err) {
                 $('#mc-notification').hide().html('<span class="alert">Could not connect to server. Please try again later.</span>').fadeIn("slow");
             
