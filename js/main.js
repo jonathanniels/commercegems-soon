@@ -59,7 +59,7 @@ $(function() {
     function register($form) {
         $.ajax({
             type: $form.attr('method'),
-            url: $form.attr('action'),
+            url: "php/contact-me.php",
             data: $form.serialize(),
             cache: false,
             dataType: 'json',
