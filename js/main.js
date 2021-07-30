@@ -65,18 +65,10 @@ $(function() {
                 $('#mc-notification').hide().html('<span class="alert">Could not connect to server. Please try again later.</span>').fadeIn("slow");
             
             },
-            success: function(data) {
-                
-                if (data.result != "success") {
-                    var message = data.msg.substring(4);
-                    $('#mc-notification').hide().html('<span class="alert"><i class="fa fa-exclamation-triangle"></i>' + message + '</span>').fadeIn("slow");
-                
-                } else {
-                    var message = data.msg.substring(4);
-										$("#mc-form")[0].reset();
-                    $('#mc-notification').hide().html('<span class="success"><i class="fa fa-envelope"></i>' + 'Awesome! We sent you a confirmation email.' + '</span>').fadeIn("slow");
-                
-                }
+            success: function(data) {   
+                var message = data.msg.substring(4);
+                $("#mc-form")[0].reset();
+                $('#mc-notification').hide().html('<span class="success"><i class="fa fa-envelope"></i>' + 'Awesome! We sent you a confirmation email.' + '</span>').fadeIn("slow");
             }
         });
     }
